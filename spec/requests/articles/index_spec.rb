@@ -12,7 +12,6 @@ describe 'GET /api/articles' do
     end
 
     it 'is expected to respond with an article' do
-        binding.pry
         expect(response_json.first['title']).to eq 'My Own Title'
     end
 end
