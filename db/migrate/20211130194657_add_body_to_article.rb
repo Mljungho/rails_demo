@@ -1,5 +1,5 @@
 class AddBodyToArticle < ActiveRecord::Migration[6.1]
   def change
-    add_column :articles, :body, :text
+    add_column :articles, :content, :text
   end
 end

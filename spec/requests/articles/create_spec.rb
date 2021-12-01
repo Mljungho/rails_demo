@@ -7,7 +7,7 @@ describe 'POST /api/articles' do
            params: {
              article: {
                title: 'My awesome article',
-               body: 'My text bla bla'
+               content: 'My text bla bla'
              }
            }
     end
@@ -23,7 +23,7 @@ describe 'POST /api/articles' do
     end
 
     it 'is expected to return the new object with a title' do
-      expect(response_json['article']['body']).to eq 'My text bla bla'
+      expect(response_json['article']['content']).to eq 'My text bla bla'
     end
   end
 

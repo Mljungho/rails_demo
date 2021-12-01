@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2021_11_30_194657) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "body"
   end
 
 end
