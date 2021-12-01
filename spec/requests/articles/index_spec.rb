@@ -12,6 +12,6 @@ describe 'GET /api/articles' do
     end
 
     it 'is expected to respond with an article' do
-        expect(response_json.first['title']).to eq 'My Own Title'
+        expect(response_json['articles'].first['title']).to eq 'My Own Title'
     end
 end

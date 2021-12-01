@@ -14,4 +14,6 @@ RSpec.describe Article, type: :model do
       expect(create(:article)).to be_valid
     end
   end
+
+  it { is_expected.to validates :title }
 end

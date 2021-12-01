@@ -18,4 +18,18 @@ RSpec.describe ' GET /api/articles/:id' do
             expect(response_json['article']['body']).to eq 'And this is some kind of mindblowing content'
         end
     end
+
+    describe 'unccsessfull with invalid id'do
+        before do
+            get 'api/articles/abc'
+        end
+
+        it 'is excpected to return a 404 status' do
+            expect(response).to have_http_status 200
+        end
+
+        it 'is expected to return an error message' do
+            expect(response_json['message']).to eq 'Unfortunatley we can not find the article you are looking for'
+        end
+    end
 end
