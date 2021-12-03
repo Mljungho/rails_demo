@@ -1,5 +1,6 @@
 class Api::ArticlesController < ApplicationController
   before_action :validate_params_presence, only: [:create]
+     #  before_action will only kick in during [:create] action
 
   def index
     articles = Article.all
@@ -12,14 +13,13 @@ class Api::ArticlesController < ApplicationController
   end
 
   def create
-      article = Article.create(article_params)
-      if article.persisted?
-        render json: { article: article }, status: 201
-      else
-        render json: { message: article.errors.full_messages.to_sentence }, status: 422
+    article = Article.create(article_params)
+    if article.persisted?
+      render json: { article: article }, status: 201
+    else
+      render json: { message: article.errors.full_message.to_sentence }, status: 422
     end
   end
-
 
   private
 
@@ -30,6 +30,4 @@ class Api::ArticlesController < ApplicationController
   def article_params
     params[:article].permit(:title, :content)
   end
-
-
-
+end

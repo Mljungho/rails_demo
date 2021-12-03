@@ -22,7 +22,7 @@ describe 'POST /api/articles' do
       expect(response_json['article']['title']).to eq 'My awesome article'
     end
 
-    it 'is expected to return the new object with a title' do
+    it 'is expected to return the new object with a article content' do
       expect(response_json['article']['content']).to eq 'My text bla bla'
     end
   end
