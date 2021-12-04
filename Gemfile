@@ -8,6 +8,9 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rack-cors'
+gem 'devise_token_auth'
+#rails g devise_token_auth:install User api/auth
+#                           User class => api/auth path
 
 group :development, :test do
   gem 'rspec-rails'
@@ -15,6 +18,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-rails' #??
   gem 'coveralls', require: false
+  gem 'faker'
 end
 
 group :development do
