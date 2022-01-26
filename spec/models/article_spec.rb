@@ -15,5 +15,16 @@ RSpec.describe Article, type: :model do
     end
   end
 
-  it { is_expected.to validates :title }
+  it { is_expected.to validate_presence_of :title }
+
+  describe 'Image' do
+    it 'is expected to be attached' do
+      subject.image.attach(
+        io: File.open(fixture_path + '/dummy_image.png'),
+        filename: 'attachment.png',
+        content_type: 'image/png'
+      )
+      expect(subject.image).to be_attached
+    end
+  end
 end

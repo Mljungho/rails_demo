@@ -1,5 +1,4 @@
 describe 'GET /api/articles' do
-    
   subject { response }
   let!(:article) { create(:article, title: 'My Own Title') }
 
